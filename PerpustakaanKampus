@@ -1,0 +1,506 @@
+package Bab1_TugasPraktikum;
+
+import java.util.Scanner;
+
+public class PerpustakaanKampus {
+    public static void main(String[] args) {
+        // Membuat beberapa penulis
+        Penulis p1 = new Penulis();
+        p1.setNama("Mark Lutz");
+        p1.setEmail("mark.lutz@example.com");
+        p1.setAfiliasi("Python Institute");
+
+        Penulis p2 = new Penulis();
+        p2.setNama("Robert C. Martinez");
+        p2.setEmail("uncle.bob@example.com");
+        p2.setAfiliasi("Clean Code Institute");
+
+        Penulis p3 = new Penulis();
+        p3.setNama("Thomas Cormen");
+        p3.setEmail("cormen@example.com");
+        p3.setAfiliasi("MIT");
+
+        Penulis p4 = new Penulis();
+        p4.setNama("Plato Sugiarto");
+        p4.setEmail("plato@ancient.com");
+        p4.setAfiliasi("Academy of Athens");
+
+        Penulis p5 = new Penulis();
+        p5.setNama("Aristotle Kurniawan");
+        p5.setEmail("aristotle@ancient.com");
+        p5.setAfiliasi("University of Brawijaya");
+
+        Penulis p6 = new Penulis();
+        p6.setNama("Yuval Noah Harari");
+        p6.setEmail("harari@example.com");
+        p6.setAfiliasi("Hebrew University of Jerusalem");
+
+        Penulis p7 = new Penulis();
+        p7.setNama("Howard Zinn");
+        p7.setEmail("zinn@example.com");
+        p7.setAfiliasi("Boston University");
+
+        Penulis p8 = new Penulis();
+        p8.setNama("Karen Armstrong");
+        p8.setEmail("armstrong@example.com");
+        p8.setAfiliasi("Religious Scholar");
+
+        Penulis p9 = new Penulis();
+        p9.setNama("Daniel Kahneman");
+        p9.setEmail("kahneman@example.com");
+        p9.setAfiliasi("Princeton University");
+
+        Penulis p10 = new Penulis();
+        p10.setNama("Noam Chomsky");
+        p10.setEmail("chomsky@example.com");
+        p10.setAfiliasi("MIT");
+
+        Penulis p11 = new Penulis();
+        p11.setNama("J.K. Rowling");
+        p11.setEmail("rowling@example.com");
+        p11.setAfiliasi("Hogwarts Institute of Witchcraft");
+
+        Penulis p12 = new Penulis();
+        p12.setNama("Charles Duhigg");
+        p12.setEmail("duhigg@example.com");
+        p12.setAfiliasi("New York Times");
+
+        // Membuat kategori-kategori
+        Kategori teknologi = new Kategori();
+        teknologi.setNama("Teknologi");
+        teknologi.setKode("TK");
+        teknologi.setDeskripsi("Buku-buku mengenai teknologi informasi dan komputer");
+
+        Kategori filsafat = new Kategori();
+        filsafat.setNama("Filsafat");
+        filsafat.setKode("FL");
+        filsafat.setDeskripsi("Buku-buku tentang pemikiran dan filosofi");
+
+        Kategori sejarah = new Kategori();
+        sejarah.setNama("Sejarah");
+        sejarah.setKode("SJ");
+        sejarah.setDeskripsi("Buku-buku tentang sejarah dunia dan peradaban");
+
+        Kategori agama = new Kategori();
+        agama.setNama("Agama");
+        agama.setKode("AG");
+        agama.setDeskripsi("Buku-buku tentang agama dan spiritualitas");
+
+        Kategori psikologi = new Kategori();
+        psikologi.setNama("Psikologi");
+        psikologi.setKode("PS");
+        psikologi.setDeskripsi("Buku-buku tentang ilmu psikologi dan perilaku manusia");
+
+        Kategori politik = new Kategori();
+        politik.setNama("Politik");
+        politik.setKode("PL");
+        politik.setDeskripsi("Buku-buku tentang politik dan pemerintahan");
+
+        Kategori fiksi = new Kategori();
+        fiksi.setNama("Fiksi");
+        fiksi.setKode("FK");
+        fiksi.setDeskripsi("Buku-buku fiksi dan novel");
+
+        // Kategori Teknologi - 5 Buku
+        Buku t1 = new Buku();
+        t1.setJudul("Learning Python");
+        t1.setTahunTerbit(2013);
+        t1.setPenerbit("O'Reilly Media");
+        t1.setJumlahHalaman(1600);
+        t1.setIsbn("978-1449355739");
+        t1.tambahPenulis(p1);
+        t1.tambahPenulis(p12);
+        teknologi.tambahBuku(t1);
+
+        Buku t2 = new Buku();
+        t2.setJudul("Clean Code");
+        t2.setTahunTerbit(2008);
+        t2.setPenerbit("Prentice Hall");
+        t2.setJumlahHalaman(464);
+        t2.setIsbn("978-0132350884");
+        t2.tambahPenulis(p2);
+        teknologi.tambahBuku(t2);
+
+        Buku t3 = new Buku();
+        t3.setJudul("Introduction to Algorithms");
+        t3.setTahunTerbit(2009);
+        t3.setPenerbit("MIT Press");
+        t3.setJumlahHalaman(1312);
+        t3.setIsbn("978-0262033848");
+        t3.tambahPenulis(p3);
+        teknologi.tambahBuku(t3);
+
+        Buku t4 = new Buku();
+        t4.setJudul("Clean Architecture");
+        t4.setTahunTerbit(2017);
+        t4.setPenerbit("Prentice Hall");
+        t4.setJumlahHalaman(432);
+        t4.setIsbn("978-0134494166");
+        t4.tambahPenulis(p2);
+        teknologi.tambahBuku(t4);
+
+        Buku t5 = new Buku();
+        t5.setJudul("The Power of Habit");
+        t5.setTahunTerbit(2012);
+        t5.setPenerbit("Random House");
+        t5.setJumlahHalaman(371);
+        t5.setIsbn("978-1400069286");
+        t5.tambahPenulis(p12);
+        teknologi.tambahBuku(t5);
+
+        // Kategori Filsafat - 5 Buku
+        Buku f1 = new Buku();
+        f1.setJudul("Republic");
+        f1.setTahunTerbit(-380);
+        f1.setPenerbit("Ancient Texts");
+        f1.setJumlahHalaman(416);
+        f1.setIsbn("978-0872201361");
+        f1.tambahPenulis(p4);
+        filsafat.tambahBuku(f1);
+
+        Buku f2 = new Buku();
+        f2.setJudul("Nicomachean Ethics");
+        f2.setTahunTerbit(-350);
+        f2.setPenerbit("Ancient Texts");
+        f2.setJumlahHalaman(368);
+        f2.setIsbn("978-0872204645");
+        f2.tambahPenulis(p5);
+        filsafat.tambahBuku(f2);
+
+        Buku f3 = new Buku();
+        f3.setJudul("Symposium");
+        f3.setTahunTerbit(-380);
+        f3.setPenerbit("Ancient Texts");
+        f3.setJumlahHalaman(256);
+        f3.setIsbn("978-0140449273");
+        f3.tambahPenulis(p4);
+        filsafat.tambahBuku(f3);
+
+        Buku f4 = new Buku();
+        f4.setJudul("Politics");
+        f4.setTahunTerbit(-330);
+        f4.setPenerbit("Ancient Texts");
+        f4.setJumlahHalaman(308);
+        f4.setIsbn("978-0872203136");
+        f4.tambahPenulis(p5);
+        filsafat.tambahBuku(f4);
+
+        Buku f5 = new Buku();
+        f5.setJudul("Metaphysics");
+        f5.setTahunTerbit(-350);
+        f5.setPenerbit("Ancient Texts");
+        f5.setJumlahHalaman(368);
+        f5.setIsbn("978-0140446197");
+        f5.tambahPenulis(p5);
+        filsafat.tambahBuku(f5);
+
+        // Kategori Sejarah - 5 Buku
+        Buku s1 = new Buku();
+        s1.setJudul("Sapiens: A Brief History of Humankind");
+        s1.setTahunTerbit(2014);
+        s1.setPenerbit("Harper");
+        s1.setJumlahHalaman(464);
+        s1.setIsbn("978-0062316097");
+        s1.tambahPenulis(p6);
+        sejarah.tambahBuku(s1);
+
+        Buku s2 = new Buku();
+        s2.setJudul("A People's History of the United States");
+        s2.setTahunTerbit(1980);
+        s2.setPenerbit("Harper");
+        s2.setJumlahHalaman(729);
+        s2.setIsbn("978-0060838652");
+        s2.tambahPenulis(p7);
+        sejarah.tambahBuku(s2);
+
+        Buku s3 = new Buku();
+        s3.setJudul("Homo Deus: A Brief History of Tomorrow");
+        s3.setTahunTerbit(2017);
+        s3.setPenerbit("Harper");
+        s3.setJumlahHalaman(464);
+        s3.setIsbn("978-0062464316");
+        s3.tambahPenulis(p6);
+        sejarah.tambahBuku(s3);
+
+        Buku s4 = new Buku();
+        s4.setJudul("21 Lessons for the 21st Century");
+        s4.setTahunTerbit(2018);
+        s4.setPenerbit("Spiegel & Grau");
+        s4.setJumlahHalaman(400);
+        s4.setIsbn("978-0525512172");
+        s4.tambahPenulis(p6);
+        sejarah.tambahBuku(s4);
+
+        Buku s5 = new Buku();
+        s5.setJudul("The History of the Peloponnesian War");
+        s5.setTahunTerbit(-400);
+        s5.setPenerbit("Ancient Texts");
+        s5.setJumlahHalaman(648);
+        s5.setIsbn("978-0140440393");
+        Penulis thucydides = new Penulis();
+        thucydides.setNama("Thucydides");
+        thucydides.setAfiliasi("Ancient Athens");
+        s5.tambahPenulis(thucydides);
+        sejarah.tambahBuku(s5);
+
+        // Kategori Agama - 5 Buku
+        Buku a1 = new Buku();
+        a1.setJudul("A History of God");
+        a1.setTahunTerbit(1993);
+        a1.setPenerbit("Ballantine Books");
+        a1.setJumlahHalaman(496);
+        a1.setIsbn("978-0345384560");
+        a1.tambahPenulis(p8);
+        agama.tambahBuku(a1);
+
+        Buku a2 = new Buku();
+        a2.setJudul("Buddhism Philosophy");
+        a2.setTahunTerbit(2009);
+        a2.setPenerbit("Knopf");
+        a2.setJumlahHalaman(432);
+        a2.setIsbn("978-0307269188");
+        a2.tambahPenulis(p8);
+        agama.tambahBuku(a2);
+
+        Buku a3 = new Buku();
+        a3.setJudul("The Battle for God");
+        a3.setTahunTerbit(2000);
+        a3.setPenerbit("Ballantine Books");
+        a3.setJumlahHalaman(480);
+        a3.setIsbn("978-0345391698");
+        a3.tambahPenulis(p8);
+        agama.tambahBuku(a3);
+
+        Buku a4 = new Buku();
+        a4.setJudul("Fields of Blood");
+        a4.setTahunTerbit(2014);
+        a4.setPenerbit("Knopf");
+        a4.setJumlahHalaman(528);
+        a4.setIsbn("978-0307957047");
+        a4.tambahPenulis(p8);
+        agama.tambahBuku(a4);
+
+        Buku a5 = new Buku();
+        a5.setJudul("Religion in Secular Perspective");
+        a5.setTahunTerbit(2006);
+        a5.setPenerbit("Knopf");
+        a5.setJumlahHalaman(592);
+        a5.setIsbn("978-0385721240");
+        a5.tambahPenulis(p8);
+        agama.tambahBuku(a5);
+
+        // Kategori Psikologi - 5 Buku
+        Buku ps1 = new Buku();
+        ps1.setJudul("Thinking, Fast and Slow");
+        ps1.setTahunTerbit(2011);
+        ps1.setPenerbit("Farrar, Straus and Giroux");
+        ps1.setJumlahHalaman(499);
+        ps1.setIsbn("978-0374275631");
+        ps1.tambahPenulis(p9);
+        psikologi.tambahBuku(ps1);
+
+        Buku ps2 = new Buku();
+        ps2.setJudul("The Power of Habit");
+        ps2.setTahunTerbit(2012);
+        ps2.setPenerbit("Random House");
+        ps2.setJumlahHalaman(371);
+        ps2.setIsbn("978-1400069286");
+        ps2.tambahPenulis(p12);
+        psikologi.tambahBuku(ps2);
+
+        Buku ps3 = new Buku();
+        ps3.setJudul("Man's Search for Meaning");
+        ps3.setTahunTerbit(1946);
+        ps3.setPenerbit("Beacon Press");
+        ps3.setJumlahHalaman(184);
+        ps3.setIsbn("978-0807014295");
+        Penulis frankl = new Penulis();
+        frankl.setNama("Viktor E. Frankl");
+        frankl.setAfiliasi("Vienna Medical School");
+        ps3.tambahPenulis(frankl);
+        psikologi.tambahBuku(ps3);
+
+        Buku ps4 = new Buku();
+        ps4.setJudul("Quiet: The Power of Introverts");
+        ps4.setTahunTerbit(2012);
+        ps4.setPenerbit("Crown Publishing");
+        ps4.setJumlahHalaman(352);
+        ps4.setIsbn("978-0307352149");
+        Penulis cain = new Penulis();
+        cain.setNama("Susan Cain");
+        cain.setAfiliasi("Independent");
+        ps4.tambahPenulis(cain);
+        psikologi.tambahBuku(ps4);
+
+        Buku ps5 = new Buku();
+        ps5.setJudul("Emotional Intelligence");
+        ps5.setTahunTerbit(1995);
+        ps5.setPenerbit("Bantam Books");
+        ps5.setJumlahHalaman(352);
+        ps5.setIsbn("978-0553375060");
+        Penulis goleman = new Penulis();
+        goleman.setNama("Daniel Goleman");
+        goleman.setAfiliasi("New York Times");
+        ps5.tambahPenulis(goleman);
+        psikologi.tambahBuku(ps5);
+
+        // Kategori Politik - 5 Buku
+        Buku pl1 = new Buku();
+        pl1.setJudul("Manufacturing Consent");
+        pl1.setTahunTerbit(1988);
+        pl1.setPenerbit("Pantheon Books");
+        pl1.setJumlahHalaman(412);
+        pl1.setIsbn("978-0375714498");
+        pl1.tambahPenulis(p10);
+        Penulis herman = new Penulis();
+        herman.setNama("Edward S. Herman");
+        herman.setAfiliasi("University of Pennsylvania");
+        pl1.tambahPenulis(herman);
+        politik.tambahBuku(pl1);
+
+        Buku pl2 = new Buku();
+        pl2.setJudul("Liberalism Concept");
+        pl2.setTahunTerbit(1532);
+        pl2.setPenerbit("Various");
+        pl2.setJumlahHalaman(140);
+        pl2.setIsbn("978-0486272740");
+        Penulis machiavelli = new Penulis();
+        machiavelli.setNama("Niccolò Machiavelli");
+        machiavelli.setAfiliasi("Florence");
+        pl2.tambahPenulis(machiavelli);
+        politik.tambahBuku(pl2);
+
+        Buku pl3 = new Buku();
+        pl3.setJudul("The Communist Manifesto");
+        pl3.setTahunTerbit(1848);
+        pl3.setPenerbit("Various");
+        pl3.setJumlahHalaman(96);
+        pl3.setIsbn("978-0717802418");
+        Penulis marx = new Penulis();
+        marx.setNama("Karl Marx");
+        marx.setAfiliasi("London");
+        pl3.tambahPenulis(marx);
+        Penulis engels = new Penulis();
+        engels.setNama("Friedrich Engels");
+        engels.setAfiliasi("London");
+        pl3.tambahPenulis(engels);
+        politik.tambahBuku(pl3);
+
+        Buku pl4 = new Buku();
+        pl4.setJudul("On Liberty");
+        pl4.setTahunTerbit(1859);
+        pl4.setPenerbit("Various");
+        pl4.setJumlahHalaman(176);
+        pl4.setIsbn("978-0486421308");
+        Penulis mill = new Penulis();
+        mill.setNama("John Stuart Mill");
+        mill.setAfiliasi("British Parliament");
+        pl4.tambahPenulis(mill);
+        politik.tambahBuku(pl4);
+
+        Buku pl5 = new Buku();
+        pl5.setJudul("The Origins of Totalitarianism");
+        pl5.setTahunTerbit(1951);
+        pl5.setPenerbit("Schocken Books");
+        pl5.setJumlahHalaman(576);
+        pl5.setIsbn("978-0156701532");
+        Penulis arendt = new Penulis();
+        arendt.setNama("Hannah Arendt");
+        arendt.setAfiliasi("University of Chicago");
+        pl5.tambahPenulis(arendt);
+        politik.tambahBuku(pl5);
+
+        // Kategori Fiksi - 5 Buku
+        Buku fk1 = new Buku();
+        fk1.setJudul("Harry Potter and the Philosopher's Stone");
+        fk1.setTahunTerbit(1997);
+        fk1.setPenerbit("Bloomsbury");
+        fk1.setJumlahHalaman(223);
+        fk1.setIsbn("978-0747532743");
+        fk1.tambahPenulis(p11);
+        fiksi.tambahBuku(fk1);
+
+        Buku fk2 = new Buku();
+        fk2.setJudul("1984");
+        fk2.setTahunTerbit(1949);
+        fk2.setPenerbit("Secker & Warburg");
+        fk2.setJumlahHalaman(328);
+        fk2.setIsbn("978-0451524935");
+        Penulis orwell = new Penulis();
+        orwell.setNama("George Orwell");
+        orwell.setAfiliasi("Independent");
+        fk2.tambahPenulis(orwell);
+        fiksi.tambahBuku(fk2);
+
+        Buku fk3 = new Buku();
+        fk3.setJudul("To Kill a Mockingbird");
+        fk3.setTahunTerbit(1960);
+        fk3.setPenerbit("J. B. Lippincott & Co.");
+        fk3.setJumlahHalaman(281);
+        fk3.setIsbn("978-0446310789");
+        Penulis lee = new Penulis();
+        lee.setNama("Harper Lee");
+        lee.setAfiliasi("Independent");
+        fk3.tambahPenulis(lee);
+        fiksi.tambahBuku(fk3);
+
+        Buku fk4 = new Buku();
+        fk4.setJudul("The Great Gatsby");
+        fk4.setTahunTerbit(1925);
+        fk4.setPenerbit("Charles Scribner's Sons");
+        fk4.setJumlahHalaman(180);
+        fk4.setIsbn("978-0743273565");
+        Penulis fitzgerald = new Penulis();
+        fitzgerald.setNama("F. Scott Fitzgerald");
+        fitzgerald.setAfiliasi("Independent");
+        fk4.tambahPenulis(fitzgerald);
+        fiksi.tambahBuku(fk4);
+
+        Buku fk5 = new Buku();
+        fk5.setJudul("Pride and Prejudice");
+        fk5.setTahunTerbit(1813);
+        fk5.setPenerbit("T. Egerton");
+        fk5.setJumlahHalaman(279);
+        fk5.setIsbn("978-0486284736");
+        Penulis austen = new Penulis();
+        austen.setNama("Jane Austen");
+        austen.setAfiliasi("Independent");
+        fk5.tambahPenulis(austen);
+        fiksi.tambahBuku(fk5);
+
+        // Meminta input user untuk menampilkan sesuai dengan genre yang ada
+        int a = 0;
+        do{
+            System.out.println("CAMPUS LIBRARY INFORMATION SYSTEM");
+            System.out.println("""
+                    
+                    Menu
+                    1. Teknologi
+                    2. Filsafat
+                    3. Sejarah
+                    4. Agama
+                    5. Psikologi
+                    6. Politik
+                    7. Fiksi
+                    8. Keluar
+                    """);
+            System.out.print("Ketikkan pilihan menu yang Anda inginkan: ");
+            Scanner scan  = new Scanner(System.in);
+            a = scan.nextInt();
+
+            switch(a){
+                case 1 ->{teknologi.tampilkanInformasi();}
+                case 2 ->{filsafat.tampilkanInformasi();}
+                case 3 ->{sejarah.tampilkanInformasi();}
+                case 4 ->{agama.tampilkanInformasi();}
+                case 5 ->{psikologi.tampilkanInformasi();}
+                case 6 ->{politik.tampilkanInformasi();}
+                case 7 ->{fiksi.tampilkanInformasi();}
+                case 8 ->{System.out.println("Terima kasih telah menggunakan layanan kami!");}
+            }
+        }
+        while(a!=8);
+
+    }
+}
+
